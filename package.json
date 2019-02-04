@@ -6,9 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": [
-    "nodejs"
-  ],
+  
   "author": "samiha",
   "license": "ISC",
   "dependencies": {
