@@ -1,0 +1,25 @@
+<div class="container center-align">
+    
+<h1 class="white-text" style="margin-top:200px;">
+    Welcome to <strong style="font-weight: bolder;">
+        StoryTeller.
+    </strong>  
+</h1>
+<p class="white-text">
+    this website is desigend to make you feel relieved whether you want to share it or just get it out of your mind .
+
+</p>
+{{#if user}}
+{{else}}
+{{!--   --}}
+<p class="white-text">Join us now ,</p>
+<a href="/auth/google" class="waves-effect waves-light btn-flat btn-lg deep-purple lighten-1 white-text">
+    {{!-- <i class="fab fa-google-plus-g white-text"></i> --}}
+     Sign with google
+    </a>
+    
+    {{/if}}
+</div>
+
+
+

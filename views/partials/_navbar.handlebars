@@ -1,0 +1,52 @@
+
+  <nav class="container deep-purple lighten-1">
+    
+              {{#if user}}
+                <div class="nav-wrapper ">
+          <a href="#" class="brand-logo center">StoryTeller.</a>
+            <ul id="" class="right hide-on-med-and-down">
+
+              <li><a href="/auth/dashboard" >Welcome , {{user.firstName}} .</a></li>
+      
+            </ul>
+                 <ul id="" class="left hide-on-med-and-down">
+
+         <a href="#" data-target="slide-out" class="sidenav-trigger " style="display:inline-block;"><i class="fas fa-align-center"></i></a>
+      
+            </ul>
+            </div>
+
+        {{else}}
+        <div class="nav-wrapper ">
+            <a href="#" class="brand-logo center">StoryTeller.</a>
+            <ul id="" class="left hide-on-med-and-down">
+
+              <li><a href="/auth/google" >login</a></li>
+              <li><a href="/stories" >See public stories</a></li>
+      
+            </ul>
+        
+      </div>
+        {{/if}}
+        
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background deep-purple lighten-1">
+        
+      </div>
+      <a href="#user" ><img class="circle" src="{{user.img}}"></a>
+      <a href="#name"><span class="white-text name">{{user.firstName}}</span></a>
+      <a href="#email"><span class="white-text email">{{user.email}}</span></a>
+    </div></li>
+    <li><a href="/stories" class="waves-effect"><i class="fas fa-book-open"></i>See public stories</a></li>
+    <li><div class="divider"></div></li>
+     <li><a href="/stories/my" class="waves-effect"><i class="fas fa-book"></i>Your Stories</a></li>
+    <li><div class="divider"></div></li>
+     <li><a href="/dashboard" class="waves-effect"><i class="fas fa-align-justify"></i>Dashboard</a></li>
+     <li><div class="divider"></div></li>
+     <li><a href="/auth/logout" class="waves-effect"><i class="fas fa-sign-out-alt"></i>logout</a></li>
+  </ul>
+          
+  </nav>
+        
+        
