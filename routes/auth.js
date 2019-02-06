@@ -13,7 +13,7 @@ router.get('/google/callback',
     // Successful authentication, redirect home.
     res.redirect('/dashboard');
   });
-
+  
 
   router.get('/verify',(req,res)=>{
     if(req.user){

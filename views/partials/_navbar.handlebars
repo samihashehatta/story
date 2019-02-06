@@ -1,15 +1,15 @@
 
-  <nav class="container deep-purple lighten-1">
+  <nav class=" deep-purple lighten-1">
     
               {{#if user}}
                 <div class="nav-wrapper ">
-          <a href="#" class="brand-logo center">StoryTeller.</a>
+          <a href="/" class="brand-logo center">StoryTeller.</a>
             <ul id="" class="right hide-on-med-and-down">
 
               <li><a href="/auth/dashboard" >Welcome , {{user.firstName}} .</a></li>
       
             </ul>
-                 <ul id="" class="left hide-on-med-and-down">
+                 <ul id="" class="left ">
 
          <a href="#" data-target="slide-out" class="sidenav-trigger " style="display:inline-block;"><i class="fas fa-align-center"></i></a>
       
@@ -18,8 +18,8 @@
 
         {{else}}
         <div class="nav-wrapper ">
-            <a href="#" class="brand-logo center">StoryTeller.</a>
-            <ul id="" class="left hide-on-med-and-down">
+            <a href="/" class="brand-logo center">StoryTeller.</a>
+            <ul id="" class="left ">
 
               <li><a href="/auth/google" >login</a></li>
               <li><a href="/stories" >See public stories</a></li>

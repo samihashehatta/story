@@ -1,0 +1,31 @@
+ <footer class="page-footer container  deep-purple lighten-1 ">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">StoryTeller.</h5>
+                <p class="grey-text text-lighten-4">share what you want with the world </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Helpful Links</h5>
+                <ul>
+                  {{#if user}}
+                  
+                  <li><a class="grey-text text-lighten-3" href="/dashboard">Dashboard</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/stories/my">Your stories</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/auth/logout">Logout</a></li>
+                  
+                  {{else}}
+                  <li><a class="grey-text text-lighten-3" href="/auth/google">Join us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/about">About Us.</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/stories">See public stories</a></li>
+                  {{/if}}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+            © 2019 Samiha Development
+            </div>
+          </div>
+        </footer>
