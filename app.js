@@ -12,6 +12,9 @@ const index = require('./routes/index');
 const exphbs =require('express-handlebars');
 const storiesRoutes=require('./routes/stories');
 const path =require('path');
+const bodyParser =require('body-parser');
+const {truncate,stripTags}=require('./helpers/hbs')
+
 app.use(express.static(path.join(`${__dirname}/public`)));
 //mongoose connect 
 mongoose.set('debug' , true);
@@ -25,9 +28,18 @@ mongoose.connect(Key.databaseURL,{useNewUrlParser:true})
 });
 passportConfig(passport);
 //middleware for hnadlebars 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({
+    helpers: {
+        truncate: truncate,
+        stripTags: stripTags
+      },
+    defaultLayout: 'main'
+}));
 app.set('view engine', 'handlebars');
-
+//middleware for body parseer
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+ 
 
 
 // express session 

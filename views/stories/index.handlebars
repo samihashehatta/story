@@ -1,3 +1,43 @@
-<h1>
-    index
-</h1>
+<div class="">
+    <div class="row">
+        {{#each stories}}
+         
+    <div class="col s6 m4">
+      <div class="card white ">
+          <div class="card-image">
+           <a href="/stories/edit/{{id}}" class=" btn-floating halfway-fab deep-purple lighten-1 ">
+                 <i class="far fa-edit"></i>
+          </a>
+          </div>
+        
+        <div class="card-content center-align">
+          <span class="card-title ">{{title}}</span>
+          <p class="story-text">{{stripTags (truncate body 150)}}</p>
+
+      </div>
+      
+      <div class="card-action center-align">
+
+            <div class="chip">
+                <img src="{{user.img}}">
+                {{user.firstName}} {{user.lastName}}
+        </div>
+         <a href="/stories/show/{{id}}" class="waves-effect  btn-flat deep-purple lighten-3">
+             reed more
+         </a> 
+        
+      </div>
+      </div>
+    </div>
+
+        {{else}}
+        <p class="white-text"> no stories found , Join us.</p>
+
+        {{/each}}
+    </div>
+
+
+
+
+
+</div>
