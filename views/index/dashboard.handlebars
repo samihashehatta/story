@@ -1,10 +1,55 @@
-<h1>
+<div class="container">
+<h1 class="white-text">
     welcome ,{{user.firstName}}
 
 </h1>
 
 
 
-<p>
-    YOUR STORIES
+<p class="white-text">
+    YOUR STORIES:
 </p>
+
+{{#if stories}}
+      <table class="striped">
+        <thead>
+          <tr >
+              <th class="white-text">Title</th>
+              <th class="white-text">Date</th>
+              <th class="white-text">State</th>
+              <th class="white-text"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {{#each stories}}
+            <tr>
+            <td ><a href="/stories/show/{{id}}">{{title}}</a></td>
+            <td>{{formatDate date 'MMMM Do YYYY'}}</td>
+            <td><span class="dash-st">{{status}}</span></td>
+            <td >
+                <a href="/stories/edit/{{id}} " class="waves-effect white-text btn-flat deep-purple lighten-3 left-align  ">
+            <i class="far fa-edit white-text"></i></a>
+            <form action="/stories/{{id}}?_method=DELETE" method="POST" id="deleteForm">
+             <button 
+             class="waves-effect  btn-flat red white-text">
+            <i class="far fa-trash-alt"></i>
+            
+             </button>
+
+            </form>
+            </td>
+         
+          </tr>
+            {{/each}}
+        
+        </tbody>
+      </table>
+
+{{else}}
+<p>
+    No stories yet get started.
+</p>
+
+{{/if}}
+</div>

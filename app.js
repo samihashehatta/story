@@ -13,8 +13,8 @@ const exphbs =require('express-handlebars');
 const storiesRoutes=require('./routes/stories');
 const path =require('path');
 const bodyParser =require('body-parser');
-const {truncate,stripTags}=require('./helpers/hbs')
-
+const {truncate,stripTags,formatDate,select,editIcon}=require('./helpers/hbs')
+const methodOverride =require('method-override');
 app.use(express.static(path.join(`${__dirname}/public`)));
 //mongoose connect 
 mongoose.set('debug' , true);
@@ -31,7 +31,10 @@ passportConfig(passport);
 app.engine('handlebars', exphbs({
     helpers: {
         truncate: truncate,
-        stripTags: stripTags
+        stripTags: stripTags,
+        formatDate:formatDate,
+        select,
+        editIcon
       },
     defaultLayout: 'main'
 }));
@@ -40,7 +43,9 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
  
+//method override middleware\
 
+app.use(methodOverride('_method'))
 
 // express session 
 app.use(cookieParser());

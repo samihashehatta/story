@@ -64,7 +64,9 @@ body {
       .dropdown-content li > a, .dropdown-content li > span ,
       textarea, 
       .select-wrapper input.select-dropdown,
-      .card-title
+      .card-title,
+      .striped tbody tr td,
+      .striped tbody tr td a
       {
         color:#7e57c2 !important;
       }
@@ -73,7 +75,7 @@ body {
       {
         color: #424242 !important; 
       }
-      .card {
+      .not .card,.zl {
         margin-top: 100px;
       }
       .card .card-content a
@@ -84,3 +86,15 @@ body {
         padding-top: 2px;
         font-size: 12px;
       }
+      .story-text {
+        height: 120px;
+      }
+      .dash-st
+      {
+        text-transform: capitalize;
+      }
+    #deleteForm
+    {
+      display: inline-block;
+    }
+      

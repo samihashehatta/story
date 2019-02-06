@@ -1,13 +1,15 @@
-<div class="">
+<div class="not">
     <div class="row">
         {{#each stories}}
          
     <div class="col s6 m4">
       <div class="card white ">
           <div class="card-image">
-           <a href="/stories/edit/{{id}}" class=" btn-floating halfway-fab deep-purple lighten-1 ">
-                 <i class="far fa-edit"></i>
-          </a>
+              {{#if user}}
+              {{{editIcon user.id ../user.id id }}}
+              {{/if}}
+
+          
           </div>
         
         <div class="card-content center-align">
@@ -20,7 +22,8 @@
 
             <div class="chip">
                 <img src="{{user.img}}">
-                {{user.firstName}} {{user.lastName}}
+               <a href="/stories/user/{{user.id}}"> {{user.firstName}} {{user.lastName}}
+        </a>
         </div>
          <a href="/stories/show/{{id}}" class="waves-effect  btn-flat deep-purple lighten-3">
              reed more
