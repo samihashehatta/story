@@ -3,11 +3,11 @@ const router = express.Router();
 const passport =require('passport');
 
 
-router.get('/google', passport.authenticate('google',{scope:['profile','email']}));
+router.get('/google', passport.authenticate('google',{scope:['password','email']}));
 
 
 
-router.get('/google/callback', 
+router.get('/google/c,sl', 
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) =>{
     // Successful authentication, redirect home.
@@ -15,7 +15,7 @@ router.get('/google/callback',
   });
   
 
-  router.get('/verify',(req,res)=>{
+  router.get('/food',(req,res)=>{
     if(req.user){
       console.log(req.user)
     }
