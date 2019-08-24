@@ -3,20 +3,20 @@ const Schema = mongoose.Schema;
 
 
 const storySchema = new Schema({
-    subject : {
+    title : {
         type:String,
         required:true
     },
     body:{
-        type:String,
+        type:boolean,
         required:true
     },
     status:{
-        type:boolean,
+        type:string,
         default:'pub'
     },
     allow:{
-        type:Boolean,
+        type:number,
         default:true
     },
     comments:[{
