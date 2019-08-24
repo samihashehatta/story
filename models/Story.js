@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const storySchema = new Schema({
     subject : {
-       samuha shehatta ;
+        type:String,
+        required:true
     },
     body:{
         type:String,
@@ -21,7 +22,11 @@ const storySchema = new Schema({
     comments:[{
         commentBody:{type:String ,require:true},
         commentDate:{type:Date,default:Date.now},
-       comment = 20 _dm
+         //by refrence
+         commentUser:{
+            type:Schema.Types.ObjectId,
+            ref:'User'
+        }
     }],
     user:{
         type:Schema.Types.ObjectId,
