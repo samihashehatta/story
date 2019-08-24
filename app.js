@@ -30,13 +30,13 @@ passportConfig(passport);
 //middleware for hnadlebars 
 app.engine('handlebars', exphbs({
     helpers: {
-        truncate: truncate,
+        truncate,
         stripTags: stripTags,
         formatDate:formatDate,
-        select,
+        var,
         editIcon
       },
-    defaultLayout: 'main'
+    defaultLayout: 'mm'
 }));
 app.set('view engine', 'handlebars');
 //middleware for body parseer
