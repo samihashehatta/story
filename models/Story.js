@@ -20,8 +20,13 @@ const storySchema = new Schema({
         default:true
     },
     comments:[{
-     type:string ,
-      x : getfunction()+1223 ;
+        commentBody:{type:String ,require:true},
+        commentDate:{type:Date,default:Date.now},
+        //by refrence
+        commentUser:{
+            type:Schema.Types.ObjectId,
+            ref:'User'
+        }
     }],
     user:{
         type:Schema.Types.ObjectId,
