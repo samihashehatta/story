@@ -22,8 +22,8 @@ const storySchema = new Schema({
     comments:[{
         commentBody:{type:String ,require:true},
         commentDate:{type:Date,default:Date.now},
-        //by refrence
-        commentUser:{
+         //by refrence
+         commentUser:{
             type:Schema.Types.ObjectId,
             ref:'User'
         }
