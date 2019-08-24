@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const storySchema = new Schema({
-    title : {
+    subject : {
         type:String,
         required:true
     },
@@ -12,7 +12,7 @@ const storySchema = new Schema({
         required:true
     },
     status:{
-        type:String,
+        type:boolean,
         default:'pub'
     },
     allow:{
